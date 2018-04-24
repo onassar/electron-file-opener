@@ -149,6 +149,7 @@ module.exports = (function() {
          * 
          * @access  public
          * @param   Function callback
+         * @param   undefined|Object options
          * @return  void
          */
         init: function(callback, options) {
