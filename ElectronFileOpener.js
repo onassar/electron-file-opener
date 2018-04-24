@@ -18,9 +18,9 @@ module.exports = (function() {
     /**
      * __callbackDelay
      * 
-     * This is important because the files don't get trigger the open-file event
-     * at the exact same moment. So need to delay the callback so there's time
-     * to collect all the files that may have been "opened".
+     * This is important because files don't trigger the open-file event at the
+     * exact same moment. So need to delay the callback so there's time to
+     * collect all the files that may have been "opened".
      * 
      * @see     https://i.imgur.com/sPYVLab.png
      * @access  private
