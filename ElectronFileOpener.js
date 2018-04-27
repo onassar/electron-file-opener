@@ -45,14 +45,6 @@ module.exports = (function() {
     var __filePaths = [];
 
     /**
-     * __maxFiles
-     * 
-     * @access  private
-     * @var     Number (default: 10)
-     */
-    var __maxFiles = 10;
-
-    /**
      * __clone
      * 
      * @access  private
@@ -107,21 +99,6 @@ module.exports = (function() {
     };
 
     /**
-     * __setOptions
-     * 
-     * @access  private
-     * @param   undefined|Object options
-     * @return  void
-     */
-    var __setOptions = function(options) {
-        if (options !== undefined) {
-            if (options.maxFiles !== undefined) {
-                __maxFiles = options.maxFiles;
-            }
-        }
-    };
-
-    /**
      * __trackFilePath
      * 
      * @access  private
@@ -133,7 +110,6 @@ module.exports = (function() {
         __callbackTimeout = setTimeout(
             function() {
                 var filePaths = __clone(__filePaths);
-                filePaths = filePaths.slice(0, __maxFiles);
                 __callback(filePaths);
                 __filePaths = [];
             },
@@ -149,12 +125,10 @@ module.exports = (function() {
          * 
          * @access  public
          * @param   Function callback
-         * @param   undefined|Object options
          * @return  void
          */
-        init: function(callback, options) {
+        init: function(callback) {
             __callback = callback;
-            __setOptions(options);
             __listenForLaunchingEvent().then(function() {
                 __listenForOpenFileEvents();
             });
