@@ -6,11 +6,8 @@ Was helpful to have this decoupled from general app logic because when a user dr
 
 ## Sample Usage:
 ``` javascript
-var ElectronFileOpener = require('./vendors/ElectronFileOpener/ElectronFileOpener.js'),
-    options = {
-        maxFiles: 5
-    };
+var ElectronFileOpener = require('./vendors/ElectronFileOpener/ElectronFileOpener.js');
 ElectronFileOpener.init(function(filePaths) {
     console.log(filePaths);
-}, options);
+});
 ```
